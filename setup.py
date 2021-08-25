@@ -8,35 +8,35 @@
 
 from setuptools import setup
 
-with open('README.md') as f:
+with open("README.md") as f:
     readme = f.read()
 
 setup(
-    name='gc-dpr',
-    version='0.1.0',
-    description='Gradient Cached Dense Passage Retrieval',
-    url='',  # TODO
+    name="gc-dpr",
+    version="0.1.0",
+    description="Gradient Cached Dense Passage Retrieval",
+    url="",  # TODO
     classifiers=[
-        'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.8',
-        'Topic :: Scientific/Engineering :: Artificial Intelligence',
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3.8",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
     long_description=readme,
-    long_description_content_type='text/markdown',
+    long_description_content_type="text/markdown",
     setup_requires=[
-        'setuptools>=18.0',
+        "setuptools>=18.0",
     ],
     install_requires=[
-        'cython',
-        'faiss-cpu>=1.6.1',
-        'filelock',
-        'numpy',
-        'regex',
-        'torch>=1.6.0',
-        'transformers>=3.0.0,<3.1.0',
-        'tqdm>=4.27',
-        'wget',
-        'spacy>=2.1.8',
+        "cython",
+        "faiss-cpu>=1.6.1",
+        "filelock",
+        "numpy",
+        "regex",
+        "torch>=1.6.0",
+        "transformers>=3.0.0,<3.1.0",
+        "tqdm>=4.27",
+        "wget",
+        "spacy>=2.1.8",
     ],
 )
