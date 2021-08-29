@@ -200,7 +200,8 @@ def get_encoder_checkpoint_params_names():
         "encoder_model_type",
         "pretrained_file",
         "projection_dim",
-        "sequence_length",
+        "ctx_sequence_length",
+        "question_sequence_length",
     ]
 
 
