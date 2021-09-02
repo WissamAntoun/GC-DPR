@@ -476,7 +476,10 @@ class BiEncoderTrainer(object):
         eval_step: int,
         train_data_iterator: ShardedDataIterableDataset,
     ):
-
+        logging.info("**************************************")
+        logging.info("Training epoch %d", epoch)
+        logging.info("Evaluation step %d", eval_step)
+        print_args(self.args)
         args = self.args
         rolling_train_loss = 0.0
         epoch_loss = 0
@@ -497,7 +500,7 @@ class BiEncoderTrainer(object):
         loader = DataLoader(
             train_data_iterator, num_workers=1, batch_size=None, shuffle=False
         )
-
+        logging.info("Iterating through training dataset ....")
         for i, biencoder_batch in enumerate(loader):
 
             # to be able to resume shuffled ctx- pools
@@ -567,7 +570,7 @@ class BiEncoderTrainer(object):
                 )
                 self.validate_and_save(epoch, i + start_iteration, scheduler)
                 self.biencoder.train()
-
+        logging.info("Done Iterating through training dataset ....")
         self.validate_and_save(epoch, data_iteration, scheduler)
 
         epoch_loss = (epoch_loss / epoch_batches) if epoch_batches > 0 else 0
